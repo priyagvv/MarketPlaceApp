@@ -19,75 +19,12 @@ Future changes :
 4.Package as a docker image 
 5.Passwords should be hashed 
 
-Credentials 
-Client : client1/password
-Contractor : contractor1/password
-
 Build using Maven 
 mvn clean install -P mysql 
 
 Run using java 
 java -jar target/MarketPlaceApp-0.0.1-SNAPSHOT.jar
 
-Following are the endPoints created 
-1.Create Project by Client
-
-http://localhost:8080/marketPlace/createProject
-{
-"status" : "ACTIVE",
-"description" : "DESC1",
-"max_budget" : 100,
-"End_date" : "2018-09-20 04:09:30"
-}
-
-Response 
-{
-"id" : 1
-"status" : "ACTIVE",
-"description" : "DESC1",
-"max_budget" : 100,
-"End_date" : "2018-09-20 04:09:30"
-}
-
-2.Get Projects by Contractor/Client
-http://localhost:8080/marketPlace/projects/
-
-Response 
-[{
-"id" : 1
-"status" : "ACTIVE",
-"description" : "DESC1",
-"max_budget" : 100,
-"End_date" : "2018-09-20 04:09:30"
-"low_bid_price" : 10
-}]
-
-3.Get project by specific id
-http://localhost:8080/marketPlace/project/6
-
-{
-"id" : 6
-"status" : "ACTIVE",
-"description" : "DESC1",
-"max_budget" : 100,
-"End_date" : "2018-09-20 04:09:30"
-"low_bid_price" : 10
-}
-
-4.Bid for a project - Contractor
-http://localhost:8080/marketPlace/bid
-{
-"project_id": 1,
-"username" : "ues",
-"bid_price" : 10
-}
-
-Response 
-{
-"project_id": 1,
-"username" : "ues",
-"bid_price" : 10
-}
 
 
 
